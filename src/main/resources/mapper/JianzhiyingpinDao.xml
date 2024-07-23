@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.JianzhiyingpinDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.JianzhiyingpinEntity" id="jianzhiyingpinMap">
+        <result property="gangweimingcheng" column="gangweimingcheng"/>
+        <result property="xinzidaiyu" column="xinzidaiyu"/>
+        <result property="gongzuodidian" column="gongzuodidian"/>
+        <result property="gongzuoshijian" column="gongzuoshijian"/>
+        <result property="shangjiazhanghao" column="shangjiazhanghao"/>
+        <result property="shangjiamingcheng" column="shangjiamingcheng"/>
+        <result property="jianli" column="jianli"/>
+        <result property="qiuzhishijian" column="qiuzhishijian"/>
+        <result property="beizhu" column="beizhu"/>
+        <result property="yonghuzhanghao" column="yonghuzhanghao"/>
+        <result property="yonghuxingming" column="yonghuxingming"/>
+        <result property="shoujihaoma" column="shoujihaoma"/>
+        <result property="crossuserid" column="crossuserid"/>
+        <result property="crossrefid" column="crossrefid"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.JianzhiyingpinVO" >
+		SELECT * FROM jianzhiyingpin  jianzhiyingpin         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.JianzhiyingpinVO" >
+		SELECT  jianzhiyingpin.* FROM jianzhiyingpin  jianzhiyingpin 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.JianzhiyingpinView" >
+
+		SELECT  jianzhiyingpin.* FROM jianzhiyingpin  jianzhiyingpin 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.JianzhiyingpinView" >
+		SELECT * FROM jianzhiyingpin  jianzhiyingpin <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.SijiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.SijiEntity" id="sijiMap">
+        <result property="sijizhanghao" column="sijizhanghao"/>
+        <result property="mima" column="mima"/>
+        <result property="sijixingming" column="sijixingming"/>
+        <result property="touxiang" column="touxiang"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="chepaihao" column="chepaihao"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.SijiVO" >
+		SELECT * FROM siji  siji         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.SijiVO" >
+		SELECT  siji.* FROM siji  siji 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.SijiView" >
+
+		SELECT  siji.* FROM siji  siji 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.SijiView" >
+		SELECT * FROM siji  siji <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
